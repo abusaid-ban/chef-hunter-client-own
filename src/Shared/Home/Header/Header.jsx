@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import './Header.css'
 import { Link } from 'react-router-dom';
 
@@ -16,10 +16,9 @@ const Header = () => {
 
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">Profile Name</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-                Profile Picture
-              </Nav.Link>
+            <Link to='/login'><Button variant="outline-warning" active>Login</Button></Link>
+            
+              
             </Nav>
           </Navbar.Collapse>
         </Container>
