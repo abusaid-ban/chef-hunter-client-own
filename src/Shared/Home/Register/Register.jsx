@@ -1,11 +1,12 @@
 import { Button, Container, Form } from "react-bootstrap";
-import './Login.css'
 import { Link } from "react-router-dom";
-import { FaGoogle, FaGithub } from 'react-icons/fa';
 
-const Login = () => {
+
+const Register = () => {
     return (
-        <Container className="login-form">
+        <Container>
+            <h2> PLease Register Here</h2>
+            <Container className="login-form">
            <Form className="w-75 mx-auto my-2" >
       <Form.Group className="mb-3" controlId="formGroupEmail">
         <Form.Label>Email address</Form.Label>
@@ -19,13 +20,13 @@ const Login = () => {
      <Button className="mb-2" variant="outline-warning" size='lg' active>Login</Button>
      </div>
       
-      <Button className="mb-2 " variant="outline-primary" size="lg">  <FaGoogle /> Login With Google</Button> 
-      <Button variant="outline-success" size="lg"> <FaGithub /> Login With GitHub</Button>
-      <p>New to Bengali Kitchen ?<Link to='/register'>Register here</Link></p>
+      
+      <p>Already have an account ?<Link to='/login'>Login here</Link></p>
       
     </Form>
+        </Container>
         </Container>
     );
 };
 
-export default Login;
+export default Register;

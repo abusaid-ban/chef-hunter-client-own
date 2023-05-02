@@ -1,5 +1,16 @@
-.footer{
+.footer {
     background-color: black;
     color: white;
     text-align: center;
+    font-size: medium;
+    font-weight: 500;
+    font-family: 'Bruno Ace SC', cursive;
+    padding: 50px 0;
+}
+a{
+    margin-left: 20px;
+    text-decoration: none;
+}
+a:hover{
+    color: green;
 }

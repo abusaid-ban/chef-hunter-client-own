@@ -8,13 +8,13 @@ const Footer = () => {
 
 |
 
-Recipes
+<a href="">Recipes</a>
  
-Cookbooks
+<a href="">Cookbooks</a>
  
-Contact
+<a href="">Contact</a>
  
-Privacy Policy</h6>
+<a href="">Privacy Policy</a> </h6>
         </Container>
     );
 };
