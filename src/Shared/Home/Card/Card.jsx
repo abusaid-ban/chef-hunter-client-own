@@ -16,7 +16,7 @@ const Card = () => {
           <div className='card' >
           {
                 categories.map(category=> 
-                <div className='card-item'  key={category.id}>
+                <div className='card-item '  key={category.id}>
                     <img className='h-50 w-100 mb-5' src={category.picture} alt="" />
                   <h4 className='mt-2 mb-2'> Chef Name: { category.name}</h4>
                   <h6>Experience: { category.experience} Years</h6>
