@@ -9,17 +9,33 @@ import './FoodItems.css';
 
 const FoodItems = () => {
     return (
-        <Container>
+        <Container className='my-5'>
             <h4 className='text-center'>Choose a category</h4>
-            <h2 className='text-center'>Recipe Categories </h2>
+            <h2 className='text-center mb-3'>Recipe Categories </h2>
             <div className='photo'>
-                <img src={photo1} alt="" />
-                <img src={photo2} alt="" />
-                <img src={photo3} alt="" />
-                <img src={photo4} alt="" />
-                <img src={photo5} alt="" />
+                <div>
+                    <img src={photo1} alt="" />
+                    <h4>Appetizer</h4>
+                </div>
+                <div>
+                    <img src={photo2} alt="" />
+                    <h4>Beef</h4>
+                </div>
+                <div>
+                    <img src={photo3} alt="" />
+                    <h4>Chicken</h4>
+                </div>
+                <div>
+                    <img src={photo4} alt="" />
+                    <h4>Vegetarian</h4>
+                </div>
+                <div>
+                    <img src={photo5} alt="" />
+                    <h4>Desserts</h4>
+                </div>
+
             </div>
-            
+
         </Container>
     );
 };
