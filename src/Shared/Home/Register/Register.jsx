@@ -2,14 +2,14 @@ import { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/Authprovider";
-import { updateProfile } from "firebase/auth";
+
 
 
 const Register = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserData } = useContext(AuthContext);
 
 
     const handleRegister = (event) => {
@@ -20,14 +20,23 @@ const Register = () => {
         const password = form.password.value;
         const photo = form.photo.value;
         // console.log(name,email,password,photo);
+
+
+
+
+
+
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
                 setError('');
-                form.reset();
                 setSuccess('User has created successfully')
-                updateUserData(result.user,name,photo);
+                updateUserData(result.user, name, photo)
+                    .then(() => { console.log('user name updated') })
+                    .catch(error => { setError(error.message) })
+
+                form.reset();
 
             })
             .catch(error => {
@@ -36,17 +45,15 @@ const Register = () => {
             })
 
     }
-    // updateUserData(result.user, name, photo)
-    //     .then(() => { console.log('user name updated') })
-    //     .catch(error => { setError(error.message) })
-    const updateUserData =(user,name,photo)=>{
-        updateProfile(user,{
-            displayName:name,
-            photoURL:photo
-        })
-        .then(()=>{console.log('user name updated')})
-        .catch(error=>{ setError(error.message)})
-    }
+
+    // const updateUserData =(user,name,photo)=>{
+    //     updateProfile(user,{
+    //         displayName:name,
+    //         photoURL:photo
+    //     })
+    //     .then(()=>{console.log('user name updated')})
+    //     .catch(error=>{ setError(error.message)})
+    // }
 
 
     return (

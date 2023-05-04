@@ -1,0 +1,13 @@
+.card{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 5px;
+    
+}
+.card-item{
+    height: 550px;
+    border: 2px solid rgb(34, 39, 34);
+    border-radius: 2px ;
+    padding: 20px ;
+
+}

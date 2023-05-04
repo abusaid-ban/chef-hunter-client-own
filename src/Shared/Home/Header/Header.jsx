@@ -6,8 +6,10 @@ import { AuthContext } from '../../../providers/Authprovider';
 import { FaUser } from "react-icons/fa";
 
 
+
 const Header = () => {
   const { user } = useContext(AuthContext);
+  // console.log(user);
   return (
     <Container className='header mt-2 '>
       <Navbar collapseOnSelect expand="lg" bg="Light" variant="Light">
@@ -34,10 +36,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div>
-        <h3>Welcome to this delicious Bengali recipe! Bengali cuisine is known for its use of flavorful spices and ingredients that create a unique and aromatic blend of flavors. <br />
-          <span >Delicious. Traditional. Refreshing.</span> </h3>
-      </div>
+    
     </Container>
 
   );
