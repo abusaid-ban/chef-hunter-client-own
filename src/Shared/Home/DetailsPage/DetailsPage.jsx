@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import './DetailsPages.css'
+import LazyLoad from 'react-lazy-load';
 
 const DetailsPage = () => {
     const [isFavorite, setIsFavorite] = useState(false);
@@ -19,30 +20,33 @@ const DetailsPage = () => {
         console.log(chefData);
         setDetails(chefData);
     }, [])
-    const  addToFavorites=()=> {
+    const addToFavorites = () => {
         setIsFavorite(true);
         toast("Add to favorite Recipe");
-       
-      }
 
-    const  addFavorites =()=> {
+    }
+
+    const addFavorites = () => {
         setIsClicked(true);
         toast("Add to favorite Recipe");
-      
-      }
-    const  handleFavorites =()=> {
+
+    }
+    const handleFavorites = () => {
         setIsPressed(true);
         toast("Add to favorite Recipe");
-      
-      }
-      
-    
-   return (
+
+    }
+
+
+    return (
         <Container className='my-5'>
             <h2 className='text-center'>Chef Details</h2>
             <div className='details'>
                 <div>
-                    <img src={details.picture} alt="" />
+                    <LazyLoad height={762} offset={300}>
+                        <img src={details.picture} alt="" />
+                    </LazyLoad>
+
                 </div>
                 <div>
                     <h5>Chef Name: {details.name}</h5>
@@ -67,21 +71,21 @@ const DetailsPage = () => {
                         <td>{details.ingredients}</td>
                         <td>{details.method}</td>
                         <td>{details.rating}</td>
-                        <td> <Button disabled={isClicked}  onClick={ addFavorites} variant="danger">Add to Favorites <ToastContainer /></Button></td>
+                        <td> <Button disabled={isClicked} onClick={addFavorites} variant="danger">Add to Favorites <ToastContainer /></Button></td>
                     </tr>
                     <tr>
-                    <th scope="row">{details.recipe_name2}</th>
+                        <th scope="row">{details.recipe_name2}</th>
                         <td>{details.ingredients}</td>
                         <td>{details.method}</td>
                         <td>{details.rating2}</td>
                         <td> <Button disabled={isFavorite} onClick={addToFavorites} variant="danger">Add to Favorites <ToastContainer /></Button></td>
                     </tr>
                     <tr>
-                    <th scope="row">{details.recipe_name3}</th>
+                        <th scope="row">{details.recipe_name3}</th>
                         <td>{details.ingredients}</td>
                         <td>{details.method}</td>
                         <td>{details.rating3}</td>
-                        <td> <Button disabled={isPressed} onClick={ handleFavorites} variant="danger">Add to Favorites <ToastContainer /></Button></td>
+                        <td> <Button disabled={isPressed} onClick={handleFavorites} variant="danger">Add to Favorites <ToastContainer /></Button></td>
                     </tr>
                 </tbody>
             </table>
