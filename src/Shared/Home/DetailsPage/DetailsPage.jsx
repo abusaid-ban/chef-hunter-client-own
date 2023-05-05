@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Container, Table } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 import './DetailsPages.css'
 
 const DetailsPage = () => {
+    const [isFavorite, setIsFavorite] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+    const [isPressed, setIsPressed] = useState(false);
     const detailsData = useLoaderData();
     const { id } = useParams();
     // console.log(detailsData);
@@ -13,6 +19,23 @@ const DetailsPage = () => {
         console.log(chefData);
         setDetails(chefData);
     }, [])
+    const  addToFavorites=()=> {
+        setIsFavorite(true);
+        toast("Add to favorite Recipe");
+       
+      }
+
+    const  addFavorites =()=> {
+        setIsClicked(true);
+        toast("Add to favorite Recipe");
+      
+      }
+    const  handleFavorites =()=> {
+        setIsPressed(true);
+        toast("Add to favorite Recipe");
+      
+      }
+      
     
    return (
         <Container className='my-5'>
@@ -44,21 +67,21 @@ const DetailsPage = () => {
                         <td>{details.ingredients}</td>
                         <td>{details.method}</td>
                         <td>{details.rating}</td>
-                        <td> <Button variant="danger">Favorite</Button></td>
+                        <td> <Button disabled={isClicked}  onClick={ addFavorites} variant="danger">Add to Favorites <ToastContainer /></Button></td>
                     </tr>
                     <tr>
                     <th scope="row">{details.recipe_name2}</th>
                         <td>{details.ingredients}</td>
                         <td>{details.method}</td>
                         <td>{details.rating2}</td>
-                        <td> <Button variant="danger">Favorite</Button></td>
+                        <td> <Button disabled={isFavorite} onClick={addToFavorites} variant="danger">Add to Favorites <ToastContainer /></Button></td>
                     </tr>
                     <tr>
                     <th scope="row">{details.recipe_name3}</th>
                         <td>{details.ingredients}</td>
                         <td>{details.method}</td>
                         <td>{details.rating3}</td>
-                        <td> <Button variant="danger">Favorite</Button></td>
+                        <td> <Button disabled={isPressed} onClick={ handleFavorites} variant="danger">Add to Favorites <ToastContainer /></Button></td>
                     </tr>
                 </tbody>
             </table>
