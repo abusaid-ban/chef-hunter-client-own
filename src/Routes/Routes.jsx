@@ -4,6 +4,7 @@ import Login from "../Shared/Home/Login/Login";
 import Blog from "../Shared/Home/Blog/Blog";
 import Home from "../Shared/Home/Home/Home";
 import Register from "../Shared/Home/Register/Register";
+import DetailsPage from "../Shared/Home/DetailsPage/DetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
       path:'/register',
       element:<Register></Register>
      },
+     {
+      path:'/category/:id',
+      element:<DetailsPage></DetailsPage>,
+      loader: ({params})=> fetch('http://localhost:5000/details')
+     }
     ]
   },
 ]);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Card.css';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const Card = () => {
@@ -12,7 +13,7 @@ const Card = () => {
     } ,[]);
     return (
         <div className='my-5'>
-            <h2 className='text-center mb-3'>Here is Famous Bangladeshi Chefs</h2>
+            <h2 className='text-center mb-3'>Our Famous Bangladeshi Chefs</h2>
           <div className='card' >
           {
                 categories.map(category=> 
@@ -22,7 +23,7 @@ const Card = () => {
                   <h6>Experience: { category.experience} Years</h6>
                   <h6>Number of Recipes: { category.recipes} </h6>
                   <h6>Likes: { category.likes} </h6>
-                  <Button className='mb-2' variant="success">view Recipes</Button>
+                 <Link to={`/category/${category.id}`}> <Button className='mb-2'type='submit' variant="success">View Recipes</Button></Link>
 
                 </div> )
             }
