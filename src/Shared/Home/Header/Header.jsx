@@ -3,7 +3,7 @@ import './Header.css'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../providers/Authprovider';
-import { FaUser } from "react-icons/fa";
+
 
 
 
@@ -24,7 +24,7 @@ const Header = () => {
             </Nav>
             {user &&
               <Nav className='me-2'>
-                <FaUser style={{ fontSize: '2rem' }} />
+                {user.email}
               </Nav>}
             <Nav>
               { user ?

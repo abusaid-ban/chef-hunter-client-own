@@ -33,7 +33,7 @@ const Register = () => {
                 setError('');
                 setSuccess('User has created successfully')
                 updateUserData(result.user, name, photo)
-                    .then(() => { console.log('user name updated') })
+                    .then(() => {})
                     .catch(error => { setError(error.message) })
 
                 form.reset();
@@ -45,17 +45,6 @@ const Register = () => {
             })
 
     }
-
-    // const updateUserData =(user,name,photo)=>{
-    //     updateProfile(user,{
-    //         displayName:name,
-    //         photoURL:photo
-    //     })
-    //     .then(()=>{console.log('user name updated')})
-    //     .catch(error=>{ setError(error.message)})
-    // }
-
-
     return (
         <div>
             <h2 className="text-center mt-2"> PLease Register Here</h2>
