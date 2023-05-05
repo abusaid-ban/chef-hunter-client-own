@@ -33,7 +33,7 @@ const router = createBrowserRouter([
      {
       path:'/category/:id',
       element:<DetailsPage></DetailsPage>,
-      loader: ({params})=> fetch('http://localhost:5000/details')
+      loader: ({params})=> fetch('https://chef-hunter-server-abusaid-ban.vercel.app/details')
      }
      
     ]

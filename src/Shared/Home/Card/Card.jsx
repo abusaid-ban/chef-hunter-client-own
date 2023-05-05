@@ -11,7 +11,7 @@ const Card = () => {
     useEffect(() => {
         setLoading(true);
         
-        fetch('http://localhost:5000/categories')
+        fetch('https://chef-hunter-server-abusaid-ban.vercel.app/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
             setLoading(false);
