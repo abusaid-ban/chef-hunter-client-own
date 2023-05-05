@@ -3,6 +3,7 @@ import './Header.css'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../providers/Authprovider';
+import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 
 
@@ -18,8 +19,8 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className=" mx-auto">
-              <Link className='me-5 link ' to="/">Home</Link>
-              <Link className='blog' to="/blog">Blog</Link>
+              <ActiveLink className='me-5 link ' to="/">Home</ActiveLink>
+              <ActiveLink className='blog' to="/blog">Blog</ActiveLink>
 
             </Nav>
             {user &&
@@ -29,7 +30,7 @@ const Header = () => {
             <Nav>
               { user ?
               <Button variant="outline-warning" active>Logout</Button> :
-              <Link to='/login'><Button variant="outline-warning" active>Login</Button></Link> 
+              <ActiveLink to='/login'><Button variant="outline-warning" active>Login</Button></ActiveLink> 
               }
 
             </Nav>
