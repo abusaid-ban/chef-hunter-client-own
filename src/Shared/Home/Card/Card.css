@@ -12,3 +12,9 @@
     text-align: center;
 
 }
+@media screen and (max-width: 768px) {
+    .card{
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }

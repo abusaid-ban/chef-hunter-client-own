@@ -25,3 +25,9 @@ h3 span {
 h3 span:hover {
     color: hotpink;
 }
+@media screen and (max-width: 768px) {
+    h3 {
+        padding: 50px 50px;
+        
+    }
+  }
